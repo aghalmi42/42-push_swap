@@ -18,7 +18,10 @@ static void	parsing_argument_2(t_stack *stack, char *av)
 	t_node	*node;
 
 	if (!is_number(av))
+	{
+		free(stack);
 		is_error();
+	}
 	value = check_atoi(av);
 	node = create_node(value);
 	if (!node)
